@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { IssueType } from "../useContext";
 
-const IssueStyle = styled.article`
+const IssueStyle = styled.li`
   border: solid 1px;
   display: flex;
   flex-direction: row;

@@ -1,9 +1,10 @@
 import Main from "components/Main";
-import Issues from "components/Main/Issues";
-import Bottom from "components/Bottom";
+
 import { CurrentIssueProvider } from "components/useContext";
 import Title from "components/Title";
 import styled from "styled-components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Detail from "./components/Detail";
 
 const AppStyle = styled.div`
   display: flex;
@@ -18,10 +19,12 @@ function App() {
     <CurrentIssueProvider>
       <AppStyle>
         <Title>Anguler / Angular-cli</Title>
-        <Main>
-          <Issues />
-        </Main>
-        <Bottom />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/issue/:issueNumber" element={<Detail />} />
+          </Routes>
+        </BrowserRouter>
       </AppStyle>
     </CurrentIssueProvider>
   );
