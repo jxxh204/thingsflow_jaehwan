@@ -16,7 +16,7 @@ function useBottom() {
 
   const onLoadIssues = () => {
     const authToken =
-      "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";
+      "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";
     fetch(
       `https://api.github.com/repos/angular/angular-cli/issues?per_page=${perPageRef.current}&page=${pageRef.current}&sort=comments`,
       {
