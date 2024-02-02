@@ -5,7 +5,7 @@ function useBottom() {
 
   const onLoadIssues = () => {
     const authToken =
-      "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";
+      "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";
     fetch(" https://api.github.com/repos/angular/angular-cli/issues", {
       method: "GET",
       headers: {

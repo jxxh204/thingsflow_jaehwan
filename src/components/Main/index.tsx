@@ -7,7 +7,6 @@ type Props = {
 const MainStyle = styled.section`
   width: 100%;
   height: 100%;
-  overflow-y: auto;
 `;
 function Main({ children }: Props) {
   return <MainStyle>{children}</MainStyle>;

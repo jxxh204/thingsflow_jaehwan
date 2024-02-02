@@ -3,13 +3,12 @@ import Issue from "./Issue";
 import { IssueType, useIssueState } from "../useContext";
 
 const IssuesStyle = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  width: 100%;
   height: 100%;
   overflow-y: auto;
-  position: relative;
 `;
 function Issues() {
   const state = useIssueState();

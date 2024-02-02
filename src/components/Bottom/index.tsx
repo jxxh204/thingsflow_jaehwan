@@ -18,6 +18,7 @@ const BottomStyle = styled.section`
   justify-content: space-around;
   align-items: center;
   border-top: solid 1px;
+  background-color: white;
 `;
 function Bottom() {
   const { onLoadIssues, onResetIssues } = useBottom();
