@@ -13,14 +13,15 @@ const GlobalStyle = createGlobalStyle`
   #root {
     position: absolute;
     width: 100%;
-    max-width: 768px;
+    max-width: 480px;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
     /* 테마 적용할때 제거 */
+    transform: translate(-50%,-50%);
     background-color: white;
-    font-family: "Pretendard-Regular";
-    color: ${theme.color.darkGray}
+    border:1px solid;
+
   }
   html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

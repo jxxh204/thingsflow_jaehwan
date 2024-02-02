@@ -6,23 +6,28 @@ import React, {
   useState,
 } from "react";
 
-export type Issue = {
+export type dataType = {
+  issue: IssueType;
+};
+export type IssueType = {
   number: number;
-  title: "string";
-  user: "string"; // user.login
-  created_at: Date;
+  title: string;
+  user: {
+    login: string;
+  }; // user.login
+  created_at: string;
   comments: number;
 };
 
-const IssueContext = createContext<Issue | null>(null);
+const IssueContext = createContext<IssueType[] | null>(null);
 const IssueDispatchContext = createContext<null | Dispatch<
-  SetStateAction<Issue | null>
+  SetStateAction<IssueType[] | null>
 >>(null);
 
 function CurrentIssueProvider({ children }: { children: React.ReactNode }) {
-  const [Issue, setIssue] = useState<Issue | null>(null);
+  const [issue, setIssue] = useState<IssueType[] | null>(null);
   return (
-    <IssueContext.Provider value={Issue}>
+    <IssueContext.Provider value={issue}>
       <IssueDispatchContext.Provider value={setIssue}>
         {children}
       </IssueDispatchContext.Provider>
