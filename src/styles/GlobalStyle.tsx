@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   #root {
     position: absolute;
     width: 100%;
+    max-width: 768px;
     height: 100%;
     top: 0;
     left: 0;
