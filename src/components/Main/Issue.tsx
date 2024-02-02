@@ -11,6 +11,7 @@ const IssueStyle = styled.li`
   width: 90%;
   font-size: 14px;
   height: 50px;
+  cursor: pointer;
 `;
 
 const ContentStyle = styled.section`
@@ -23,7 +24,13 @@ const CommentStyle = styled.section`
   text-align: right;
 `;
 
-function Issue({ data }: { data: IssueType }) {
+function Issue({
+  data,
+  onClickHandler,
+}: {
+  data: IssueType;
+  onClickHandler: () => void;
+}) {
   const date = new Date(data.created_at);
   const year = date.getFullYear();
   const month = (date.getMonth() + 1).toString().padStart(2, "0");
@@ -31,7 +38,7 @@ function Issue({ data }: { data: IssueType }) {
 
   const formattedDate = `${year}.${month}.${day}`;
   return (
-    <IssueStyle>
+    <IssueStyle onClick={onClickHandler}>
       <ContentStyle>
         <div>
           <span>#{data?.number}</span> <span>{data?.title}</span>

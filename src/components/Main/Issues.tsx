@@ -21,11 +21,11 @@ function Issues() {
     <IssuesStyle>
       {state?.map((data: IssueType, index) => (
         <Issue
-          onClick={() => {
-            navigateHandler(data.number);
-          }}
           key={index}
           data={data}
+          onClickHandler={() => {
+            navigateHandler(data.number);
+          }}
         />
       ))}
     </IssuesStyle>
