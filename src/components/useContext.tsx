@@ -12,8 +12,10 @@ export type dataType = {
 export type IssueType = {
   number: number;
   title: string;
+  body: string;
   user: {
     login: string;
+    avatar_url: string;
   }; // user.login
   created_at: string;
   comments: number;

@@ -17,13 +17,19 @@ function Detail() {
   useEffect(() => {
     const parsing = Number(location.pathname.split("/")[2]);
     const data = state.filter((i) => i.number === parsing);
+    console.log("🚀 ~ useEffect ~ data:", data);
     const set = data[0];
     setDetail(set);
   }, []);
 
   return (
     <DetailStyle>
-      <div>{detail?.number}</div>
+      <img src={detail?.user.avatar_url} />
+      <div>#{detail?.number}</div>
+      <div>작성자 : {detail?.user.login}</div>
+      <div>작성일 : {detail?.created_at}</div>
+      <div>코멘트 : {detail?.comments}</div>
+      <section>{detail?.body}</section>
     </DetailStyle>
   );
 }
