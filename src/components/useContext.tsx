@@ -19,13 +19,13 @@ export type IssueType = {
   comments: number;
 };
 
-const IssueContext = createContext<IssueType[] | null>(null);
+const IssueContext = createContext<IssueType[]>([]);
 const IssueDispatchContext = createContext<null | Dispatch<
-  SetStateAction<IssueType[] | null>
+  SetStateAction<IssueType[]>
 >>(null);
 
 function CurrentIssueProvider({ children }: { children: React.ReactNode }) {
-  const [issue, setIssue] = useState<IssueType[] | null>(null);
+  const [issue, setIssue] = useState<IssueType[]>([]);
   return (
     <IssueContext.Provider value={issue}>
       <IssueDispatchContext.Provider value={setIssue}>
