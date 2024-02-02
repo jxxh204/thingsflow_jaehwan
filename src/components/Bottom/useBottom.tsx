@@ -15,17 +15,17 @@ function useBottom() {
   };
 
   const onLoadIssues = () => {
-    const authToken =
-      "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";
+    // const authToken =
+    //   "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";
     fetch(
-      `https://api.github.com/repos/angular/angular-cli/issues?per_page=${perPageRef.current}&page=${pageRef.current}&sort=comments`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${authToken}`,
-          "Content-Type": "application/json",
-        },
-      }
+      `https://api.github.com/repos/angular/angular-cli/issues?per_page=${perPageRef.current}&page=${pageRef.current}&sort=comments`
+      // {
+      //   method: "GET",
+      //   headers: {
+      //     Authorization: `Bearer ${authToken}`,
+      //     "Content-Type": "application/json",
+      //   },
+      // }
     )
       .then((res) => res.json())
       .then((data) => {
